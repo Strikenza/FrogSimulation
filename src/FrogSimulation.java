@@ -7,13 +7,16 @@ public class FrogSimulation {
         maxHops = numHops;
     }
     private int hopDistance() {
-
+        int max = 31;
+        int min = -8;
+        return (int) (Math.random() * (max - min + 1) + min);
     }
 
     public boolean simulate() {
         int turn = 0;
+        int pos = 0;
         while (turn < maxHops) {
-            int pos += hopDistance();
+            pos += hopDistance();
             if (pos >= goalDistance) {
                 return true;
             }
